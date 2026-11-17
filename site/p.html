@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><meta name="referrer" content="no-referrer"><meta name="theme-color" content="#004346">
+<title>Meus documentos</title>
+<style>
+:root{--bg:#f3f6f6;--card:#fff;--fg:#194246;--mut:#5d7d82;--line:#dbe5e6;--acc:#2f7f8f;--bad:#b3261e}
+@media (prefers-color-scheme:dark){:root{--bg:#0f1b1d;--card:#16282b;--fg:#e4eff0;--mut:#8fb0b5;--line:#2a4448;--acc:#59b3c4;--bad:#ff8a80;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;padding:20px max(16px,env(safe-area-inset-left))}
+main{max-width:520px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
+h1{font-size:22px;margin:0}.sub{color:var(--mut);margin:0;font-size:14px}.clin{font-weight:700;color:var(--acc);letter-spacing:.02em}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:12px}
+label{font-size:13px;font-weight:600;color:var(--mut);display:block;margin-bottom:4px}
+input{font:inherit;width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--fg)}
+.btn{font:inherit;font-weight:600;border:1px solid var(--line);background:var(--card);color:var(--fg);padding:10px 14px;border-radius:10px;cursor:pointer}
+.btn.pri{background:var(--acc);border-color:var(--acc);color:#fff}.btn[disabled]{opacity:.6}
+.err{color:var(--bad);font-size:14px;margin:0;min-height:20px}
+.doc{display:flex;justify-content:space-between;align-items:center;gap:10px;border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:var(--card)}
+.doc b{display:block}.doc small{color:var(--mut)}
+#view{position:fixed;inset:0;background:var(--bg);display:none;flex-direction:column;z-index:5}
+#view.on{display:flex}#view .bar{display:flex;gap:8px;justify-content:space-between;align-items:center;padding:10px 14px;border-bottom:1px solid var(--line);background:var(--card)}
+#view iframe{flex:1;border:0;width:100%;background:#fff}
+.hid{display:none!important}
+#view .acts{display:flex;gap:8px;flex-wrap:wrap;padding:10px 14px;background:var(--card);border-bottom:1px solid var(--line)}#view .acts .btn{flex:1 1 130px}
+</style></head><body>
+<main>
+  <div class="clin" id="clin">Adintus Saúde</div>
+  <div id="ask" class="card">
+    <h1>Seus documentos</h1>
+    <p class="sub" id="who">Para sua segurança, confirme os dados do paciente.</p>
+    <form id="f" novalidate>
+      <div><label for="nasc">Data de nascimento</label><input id="nasc" inputmode="numeric" placeholder="dd/mm/aaaa" maxlength="10" autocomplete="off"></div>
+      <div style="margin-top:10px"><label for="cpf">4 primeiros dígitos do CPF</label><input id="cpf" inputmode="numeric" placeholder="0000" maxlength="4" autocomplete="off"></div>
+      <p class="err" id="er" role="alert"></p>
+      <button class="btn pri" id="go" type="submit" style="width:100%">Entrar</button>
+    </form>
+  </div>
+  <div id="msg" class="card hid"><h1 id="mt"></h1><p class="sub" id="mp"></p></div>
+  <div id="lista" class="hid" style="display:flex;flex-direction:column;gap:10px"></div>
+  <p class="sub" style="text-align:center">Somente leitura. Não compartilhe este link.</p>
+</main>
+<div id="view" role="dialog" aria-modal="true" aria-label="Documento"><div class="bar"><button class="btn" id="vx">Fechar</button><b id="vt" style="font-size:14px;text-align:center"></b><span style="width:64px"></span></div><div class="acts"><button class="btn pri" id="vimg">Salvar como foto</button><button class="btn pri" id="vpdf">Baixar PDF</button><button class="btn" id="vsh">Enviar PDF</button><button class="btn" id="vp">Imprimir</button></div><p class="err" id="ver" role="alert" style="padding:0 14px"></p><iframe id="fr" sandbox="allow-same-origin allow-modals" title="Documento"></iframe></div>
+<script>
+var URL_FN='https://umkrepbjtnjwzgpujgxi.supabase.co/functions/v1/adintus-link',tok=(location.hash||'').replace(/^#/,''),$=function(s){return document.getElementById(s)},docs=[];
+function show(t,p){$('ask').classList.add('hid');$('lista').classList.add('hid');$('msg').classList.remove('hid');$('mt').textContent=t;$('mp').textContent=p}
+function fmt(d){d=String(d||'').slice(0,10).split('-');return d.length===3?d[2]+'/'+d[1]+'/'+d[0]:''}
+if(!tok||tok.length<20)show('Link incompleto','Abra o link completo que você recebeu por e-mail ou WhatsApp.');
+$('nasc').oninput=function(){var v=this.value.replace(/\D/g,'').slice(0,8);this.value=v.length>4?v.slice(0,2)+'/'+v.slice(2,4)+'/'+v.slice(4):v.length>2?v.slice(0,2)+'/'+v.slice(2):v};
+$('cpf').oninput=function(){this.value=this.value.replace(/\D/g,'').slice(0,4)};
+$('f').onsubmit=function(e){e.preventDefault();var n=$('nasc').value;if(!/^\d{2}\/\d{2}\/\d{4}$/.test(n)){$('er').textContent='Informe a data de nascimento completa (dd/mm/aaaa).';return}
+ var iso=n.slice(6)+'-'+n.slice(3,5)+'-'+n.slice(0,2);$('go').disabled=true;$('er').textContent='';
+ fetch(URL_FN,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({acao:'abrir',token:tok,nasc:iso,cpf4:$('cpf').value})}).then(function(r){return r.json().catch(function(){return{}}).then(function(j){return{st:r.status,j:j}})}).then(function(o){
+  $('go').disabled=false;var j=o.j;
+  if(o.st===200){docs=j.docs||[];$('clin').textContent=j.clinic||'Adintus Saúde';$('ask').classList.add('hid');var L=$('lista');L.classList.remove('hid');
+   L.innerHTML='<div class="card"><h1>Documentos de '+esc(j.pname||'')+'</h1><p class="sub">Link válido até '+fmt(j.ate)+'. Toque para abrir, imprimir ou salvar em PDF.</p></div>'+docs.map(function(d,i){return '<div class="doc"><div><b>'+esc(d.t)+'</b><small>'+fmt(d.d)+'</small></div><button class="btn pri" data-i="'+i+'">Abrir</button></div>'}).join('')||'<p class="sub">Nenhum documento disponível.</p>';return}
+  if(j.erro==='revogado')return show('Link desativado','A clínica desativou este link. Peça um novo à clínica.');
+  if(j.erro==='vencido')return show('Link vencido','Este link passou da validade de 30 dias. Peça um novo à clínica.');
+  if(j.erro==='bloqueado')return show('Muitas tentativas','Por segurança, o link ficou bloqueado por 30 minutos. Tente de novo mais tarde.');
+  if(j.erro==='invalido')return show('Link não encontrado','Confira se abriu o link completo ou peça um novo à clínica.');
+  if(j.erro==='dados'){$('er').textContent='Dados incorretos. Restam '+j.restam+' tentativa'+(j.restam===1?'':'s')+'.';return}
+  $('er').textContent='Não foi possível abrir agora. Tente de novo em instantes.'}).catch(function(){$('go').disabled=false;$('er').textContent='Sem conexão. Verifique a internet e tente de novo.'})};
+function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+$('lista').onclick=function(e){var b=e.target.closest('[data-i]');if(!b)return;var d=docs[+b.getAttribute('data-i')];$('vt').textContent=d.t;$('fr').srcdoc=d.h;$('view').classList.add('on')};
+$('vx').onclick=function(){$('ver').textContent='';$('view').classList.remove('on');$('fr').srcdoc=''};
+function lib(src,g){return new Promise(function(ok,no){if(window[g])return ok();var s=document.createElement('script');s.src=src;s.onload=ok;s.onerror=function(){no(new Error('lib'))};document.head.appendChild(s)})}
+function shot(){var er=$('ver');er.textContent='';return lib('https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js','html2canvas').then(function(){
+ var d=$('fr').contentDocument,el=d.body;return window.html2canvas(el,{scale:2,backgroundColor:'#ffffff',useCORS:true,windowWidth:Math.max(d.documentElement.scrollWidth,360)})})}
+function fname(ext){return String($('vt').textContent||'documento').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-zA-Z0-9]+/g,'-').replace(/^-|-$/g,'').toLowerCase()+'.'+ext}
+function save(blob,name,share){var f;try{f=new File([blob],name,{type:blob.type})}catch(x){}
+ if(share&&f&&navigator.canShare&&navigator.canShare({files:[f]}))return navigator.share({files:[f],title:$('vt').textContent}).catch(function(e){if(e&&e.name!=='AbortError')dl()});
+ return dl();function dl(){var u=URL.createObjectURL(blob),a=document.createElement('a');a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(u)},4000)}}
+function busy(b,on){b.disabled=on;if(on){b.dataset.t=b.textContent;b.textContent='Aguarde…'}else b.textContent=b.dataset.t||b.textContent}
+function fail(b){busy(b,false);$('ver').textContent='Não foi possível gerar agora. Use Imprimir e escolha “Salvar como PDF”.'}
+$('vimg').onclick=function(){var b=this;busy(b,true);shot().then(function(c){c.toBlob(function(bl){busy(b,false);if(!bl)return fail(b);save(bl,fname('png'),true)},'image/png')}).catch(function(){fail(b)})};
+function pdfBlob(c){return lib('https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js','jspdf').then(function(){
+ var J=window.jspdf.jsPDF,pdf=new J({unit:'mm',format:'a4'}),W=210,H=297,m=0,pw=W-2*m,ph=c.height*pw/c.width,pgH=Math.floor(c.width*H/W),y=0,first=true;
+ while(y<c.height){var h=Math.min(pgH,c.height-y),s=document.createElement('canvas');s.width=c.width;s.height=h;var x=s.getContext('2d');x.fillStyle='#fff';x.fillRect(0,0,s.width,h);x.drawImage(c,0,y,c.width,h,0,0,c.width,h);
+  if(!first)pdf.addPage();first=false;pdf.addImage(s.toDataURL('image/jpeg',0.92),'JPEG',0,0,pw,h*pw/c.width);y+=h}
+ return pdf.output('blob')})}
+$('vpdf').onclick=function(){var b=this;busy(b,true);shot().then(pdfBlob).then(function(bl){busy(b,false);save(bl,fname('pdf'),false)}).catch(function(){fail(b)})};
+$('vsh').onclick=function(){var b=this;busy(b,true);shot().then(pdfBlob).then(function(bl){busy(b,false);save(bl,fname('pdf'),true)}).catch(function(){fail(b)})};
+$('vp').onclick=function(){try{$('fr').contentWindow.focus();$('fr').contentWindow.print()}catch(x){alert('Não foi possível imprimir. Use o menu do navegador.')}};
+</script></body></html>

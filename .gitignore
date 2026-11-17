@@ -1,0 +1,17 @@
+# Nunca versionar
+.env
+.env.*
+*.pem
+*.key
+secrets.*
+*segredo*
+service_role*
+node_modules/
+*.log
+.DS_Store
+Thumbs.db
+# Dados de pacientes, exportações e backups
+*.csv
+backup*/
+dump*/
+*.sql.gz

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><meta name="referrer" content="no-referrer"><meta name="theme-color" content="#0A4447">
+<title>Inscrição · Adintus Saúde</title>
+<meta name="description" content="Garanta a sua vaga nos eventos da Adintus Saúde, pelo celular, em um minuto.">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Adintus Saúde">
+<meta property="og:title" content="Inscrições abertas · Adintus Saúde"><meta property="og:description" content="Garanta a sua vaga nos eventos da Adintus Saúde, pelo celular, em um minuto.">
+<meta property="og:image" content="https://eventos.adintus.com.br/og-evento.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/estilo.css">
+</head><body>
+<main>
+  <header class="topo"><picture class="logo"><source media="(prefers-color-scheme: dark)" srcset="/logo-escuro.svg"><img src="/logo-claro.svg" alt="Adintus Saúde" width="170" height="46"></picture></header>
+  <div id="carregando" class="card" role="status">Carregando…</div>
+  <section id="aviso" class="card" hidden role="alert"><h1 id="avTit"></h1><p id="avTxt"></p></section>
+  <section id="form" hidden>
+    <div class="hero">
+      <span class="selo" id="selo">Inscrições abertas</span>
+      <div class="hero-lin">
+        <div class="data" aria-hidden="true"><span id="dSem"></span><b id="dDia"></b><span id="dMes"></span></div>
+        <h1 id="evNome"></h1>
+      </div>
+      <p class="quando" id="evQuando"></p>
+      <ul class="chips" id="evChips"></ul>
+    </div>
+    <p class="espera" id="evEspera" hidden>As vagas acabaram. Você ainda pode se inscrever na <b>lista de espera</b> e avisaremos se abrir uma vaga.</p>
+    <form id="f" class="card" novalidate autocomplete="on">
+      <h2 id="formTit">Garanta a sua vaga</h2>
+      <div class="campo"><label for="nome">Nome completo</label><input id="nome" name="nome" autocomplete="name" maxlength="120" required><p class="erro" id="e-nome"></p></div>
+      <div class="campo"><label for="tel">WhatsApp com DDD</label><input id="tel" name="tel" type="tel" inputmode="tel" autocomplete="tel" maxlength="16" placeholder="(61) 99999-8888" required><p class="erro" id="e-tel"></p></div>
+      <fieldset class="campo"><legend>Você está gestante?</legend><div class="seg"><label><input type="radio" name="gest" value="sim"><span>Sim</span></label><label><input type="radio" name="gest" value="nao"><span>Não</span></label></div><p class="erro" id="e-gest"></p></fieldset>
+      <div class="campo" id="bl-sem" hidden><label for="sem">Tempo de gestação</label><input id="sem" maxlength="40" placeholder="Ex.: 32 semanas"><p class="erro" id="e-sem"></p></div>
+      <div class="campo" id="bl-motivo" hidden><label for="motivo">Motivo da sua participação</label><textarea id="motivo" rows="3" maxlength="500"></textarea><p class="erro" id="e-motivo"></p></div>
+      <fieldset class="campo" id="bl-acomp"><legend>Vai com acompanhante?</legend><div class="seg"><label><input type="radio" name="acomp" value="sim"><span>Sim</span></label><label><input type="radio" name="acomp" value="nao" checked><span>Não</span></label></div></fieldset>
+      <div id="bl-ac" hidden>
+        <div class="campo"><label for="acNome">Nome do acompanhante</label><input id="acNome" maxlength="120"><p class="erro" id="e-acNome"></p></div>
+        <div class="campo"><label for="acPar">Parentesco</label><select id="acPar"><option value="conjuge" selected>Cônjuge</option><option value="pai">Pai</option><option value="mae">Mãe</option><option value="outro_familiar">Outro familiar</option></select><p class="erro" id="e-acPar"></p></div>
+      </div>
+      <div class="oculto" aria-hidden="true"><label for="site">Não preencha este campo</label><input id="site" tabindex="-1" autocomplete="off"></div>
+      <label class="lgpd"><input type="checkbox" id="lgpd" name="lgpd"><span>Concordo que a Adintus Saúde use estes dados somente para organizar este evento e entrar em contato comigo sobre ele.</span></label><p class="erro" id="e-lgpd"></p>
+      <p class="erro geral" id="e-geral" role="alert"></p>
+      <button type="submit" class="btn" id="enviar">Quero me inscrever</button>
+    </form>
+  </section>
+  <section id="ok" class="card ok" hidden>
+    <div class="ok-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+    <h1 id="okTit"></h1>
+    <p class="ok-ev" id="okEv"></p>
+    <div id="okBox" class="caixa"><p id="okTxt"></p>
+      <div id="pixBox" hidden><p class="sub">Chave Pix</p><p class="pix" id="pix"></p><button type="button" class="btn sec" id="copiarPix">Copiar chave Pix</button></div>
+    </div>
+    <a class="btn wa" id="wa" hidden target="_blank" rel="noopener noreferrer">Enviar comprovante pelo WhatsApp</a>
+    <p class="sub" id="okNota"></p>
+  </section>
+  <footer class="rodape"><picture><source media="(prefers-color-scheme: dark)" srcset="/logo-escuro.svg"><img src="/logo-claro.svg" alt="Adintus Saúde" width="104" height="28"></picture><p>Seus dados são usados só para este evento.</p></footer>
+</main>
+<script src="/app.js"></script>
+</body></html>
