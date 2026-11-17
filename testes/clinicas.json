@@ -1,0 +1,2527 @@
+{
+ "_leia": "Clínicas de teste (Planaltina-DF). Profissionais, pacientes e valores são FICTÍCIOS, só para demonstração. Plano: essencial | centro. Especialidade: n = nome; procs = [nome, minutos, valor, retorno_em_dias]. Profissional: n = nome, s = índice da especialidade, k = 'medico' para prontuário médico, sx = F/M, reg = registro fictício, slot = 15/30/60, dias = dias da semana (0 = domingo), h = períodos em minutos.",
+ "clinicas": [
+  {
+   "slug": "invita-fisio",
+   "nome": "Invita Físio",
+   "curto": "Invita Físio",
+   "area": "Fisioterapia ortopédica",
+   "plano": "essencial",
+   "porte": "15–25 atendimentos/dia",
+   "tel": "(61) 3686-4558",
+   "cor": "#1F6F8B",
+   "salas": [
+    "Box 1",
+    "Box 2",
+    "Sala de pilates"
+   ],
+   "specs": [
+    {
+     "n": "Fisioterapia ortopédica",
+     "procs": [
+      [
+       "Avaliação fisioterapêutica",
+       60,
+       150,
+       0
+      ],
+      [
+       "Sessão de fisioterapia",
+       45,
+       110,
+       0
+      ],
+      [
+       "RPG",
+       45,
+       130,
+       0
+      ],
+      [
+       "Reavaliação",
+       30,
+       0,
+       30
+      ]
+     ]
+    },
+    {
+     "n": "Pilates clínico",
+     "procs": [
+      [
+       "Pilates clínico (individual)",
+       45,
+       100,
+       0
+      ],
+      [
+       "Pilates clínico (dupla)",
+       45,
+       70,
+       0
+      ]
+     ]
+    }
+   ],
+   "profs": [
+    {
+     "n": "Marina Albuquerque Teles",
+     "s": 0,
+     "sx": "F",
+     "reg": "CREFITO-11 000001-F",
+     "slot": 15,
+     "dias": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "h": [
+      [
+       420,
+       720
+      ],
+      [
+       840,
+       1080
+      ]
+     ]
+    },
+    {
+     "n": "Rafael Couto Andrade",
+     "s": 0,
+     "sx": "M",
+     "reg": "CREFITO-11 000002-F",
+     "slot": 15,
+     "dias": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "h": [
+      [
+       480,
+       720
+      ],
+      [
+       780,
+       1020
+      ]
+     ]
+    },
+    {
+     "n": "Juliana Prates Moreira",
+     "s": 1,
+     "sx": "F",
+     "reg": "CREFITO-11 000003-F",
+     "slot": 15,
+     "dias": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "h": [
+      [
+       420,
+       660
+      ],
+      [
+       960,
+       1200
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "psicoequilibrando",
+   "nome": "Clínica Psicoequilibrando",
+   "curto": "Psicoequilibrando",
+   "area": "Psicologia adulto e infantil",
+   "plano": "essencial",
+   "porte": "8–15 atendimentos/dia",
+   "tel": "(61) 99889-8574",
+   "cor": "#5B6BB5",
+   "salas": [
+    "Consultório 1",
+    "Consultório 2",
+    "Sala lúdica"
+   ],
+   "specs": [
+    {
+     "n": "Psicologia adulto",
+     "procs": [
+      [
+       "Acolhimento inicial",
+       60,
+       180,
+       0
+      ],
+      [
+       "Sessão de psicoterapia",
+       45,
+       150,
+       0
+      ],
+      [
+       "Sessão on-line",
+       45,
+       140,
+       0
+      ]
+     ]
+    },
+    {
+     "n": "Psicologia infantil",
+     "procs": [
+      [
+       "Sessão infantil (ludoterapia)",
+       45,
+       160,
+       0
+      ],
+      [
+       "Orientação aos pais",
+       45,
+       160,
+       0
+      ],
+      [
+       "Avaliação psicológica infantil",
+       60,
+       220,
+       0
+      ]
+     ]
+    }
+   ],
+   "profs": [
+    {
+     "n": "Camila Rezende Furtado",
+     "s": 0,
+     "sx": "F",
+     "reg": "CRP 01/00001",
+     "slot": 15,
+     "dias": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "h": [
+      [
+       480,
+       720
+      ],
+      [
+       840,
+       1140
+      ]
+     ]
+    },
+    {
+     "n": "Bruno Lacerda Sampaio",
+     "s": 0,
+     "sx": "M",
+     "reg": "CRP 01/00002",
+     "slot": 15,
+     "dias": [
+      1,
+      3,
+      5
+     ],
+     "h": [
+      [
+       780,
+       1260
+      ]
+     ]
+    },
+    {
+     "n": "Letícia Nogueira Barros",
+     "s": 1,
+     "sx": "F",
+     "reg": "CRP 01/00003",
+     "slot": 15,
+     "dias": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "h": [
+      [
+       480,
+       720
+      ],
+      [
+       840,
+       1080
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "dra-olivia-psiquiatria",
+   "nome": "Dra. Olivia Duarte de Oliveira · Psiquiatria",
+   "curto": "Psiquiatria Dra. Olivia",
+   "area": "Psiquiatria",
+   "plano": "essencial",
+   "porte": "8–14 atendimentos/dia",
+   "tel": "(61) 98189-8048",
+   "cor": "#6A4C93",
+   "salas": [
+    "Consultório 1",
+    "Consultório 2"
+   ],
+   "specs": [
+    {
+     "n": "Psiquiatria",
+     "procs": [
+      [
+       "Consulta psiquiátrica",
+       60,
+       450,
+       0
+      ],
+      [
+       "Retorno psiquiátrico",
+       30,
+       0,
+       30
+      ],
+      [
+       "Teleconsulta psiquiátrica",
+       45,
+       400,
+       0
+      ]
+     ]
+    },
+    {
+     "n": "Psicologia",
+     "procs": [
+      [
+       "Sessão de psicoterapia",
+       45,
+       160,
+       0
+      ]
+     ]
+    }
+   ],
+   "profs": [
+    {
+     "n": "Helena Prado Vasconcelos",
+     "s": 0,
+     "k": "medico",
+     "sx": "F",
+     "reg": "CRM-DF 00001",
+     "slot": 30,
+     "dias": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "h": [
+      [
+       480,
+       720
+      ],
+      [
+       840,
+       1080
+      ]
+     ]
+    },
+    {
+     "n": "Tiago Mendes Arruda",
+     "s": 1,
+     "sx": "M",
+     "reg": "CRP 01/00004",
+     "slot": 15,
+     "dias": [
+      2,
+      4,
+      6
+     ],
+     "h": [
+      [
+       480,
+       720
+      ],
+      [
+       780,
+       1080
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "dra-lara-augusta",
+   "nome": "Clínica Dra. Lara Augusta",
+   "curto": "Clínica Dra. Lara",
+   "area": "Psiquiatria e nutrologia",
+   "plano": "essencial",
+   "porte": "6–12 atendimentos/dia",
+   "tel": "(61) 99215-5586",
+   "cor": "#2E7D6B",
+   "salas": [
+    "Consultório 1",
+    "Consultório 2",
+    "Consultório 3"
+   ],
+   "specs": [
+    {
+     "n": "Psiquiatria",
+     "procs": [
+      [
+       "Consulta psiquiátrica",
+       60,
+       450,
+       0
+      ],
+      [
+       "Retorno psiquiátrico",
+       30,
+       0,
+       30
+      ]
+     ]
+    },
+    {
+     "n": "Nutrologia",
+     "procs": [
+      [
+       "Consulta de nutrologia",
+       60,
+       400,
+       0
+      ],
+      [
+       "Retorno de nutrologia",
+       30,
+       0,
+       45
+      ],
+      [
+       "Bioimpedância",
+       15,
+       80,
+       0
+      ]
+     ]
+    },
+    {
+     "n": "Nutrição",
+     "procs": [
+      [
+       "Consulta nutricional",
+       60,
+       200,
+       0
+      ],
+      [
+       "Retorno nutricional",
+       30,
+       0,
+       30
+      ]
+     ]
+    }
+   ],
+   "profs": [
+    {
+     "n": "Fernanda Lustosa Ribeiro",
+     "s": 0,
+     "k": "medico",
+     "sx": "F",
+     "reg": "CRM-DF 00002",
+     "slot": 30,
+     "dias": [
+      1,
+      3,
+      5
+     ],
+     "h": [
+      [
+       480,
+       720
+      ],
+      [
+       840,
+       1080
+      ]
+     ]
+    },
+    {
+     "n": "Gustavo Henrique Paiva",
+     "s": 1,
+     "k": "medico",
+     "sx": "M",
+     "reg": "CRM-DF 00003",
+     "slot": 30,
+     "dias": [
+      2,
+      4
+     ],
+     "h": [
+      [
+       480,
+       720
+      ],
+      [
+       840,
+       1080
+      ]
+     ]
+    },
+    {
+     "n": "Aline Torres Campelo",
+     "s": 2,
+     "sx": "F",
+     "reg": "CRN-1 00001",
+     "slot": 30,
+     "dias": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "h": [
+      [
+       480,
+       720
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "clinica-acao",
+   "nome": "Clínica Ação",
+   "curto": "Clínica Ação",
+   "area": "Terapias em sessões (área a confirmar)",
+   "plano": "essencial",
+   "porte": "6–12 atendimentos/dia",
+   "tel": "(61) 99655-4640",
+   "cor": "#C0612B",
+   "salas": [
+    "Sala 1",
+    "Sala 2",
+    "Sala 3"
+   ],
+   "specs": [
+    {
+     "n": "Psicologia",
+     "procs": [
+      [
+       "Avaliação inicial",
+       60,
+       180,
+       0
+      ],
+      [
+       "Sessão de terapia",
+       45,
+       140,
+       0
+      ]
+     ]
+    },
+    {
+     "n": "Fonoaudiologia",
+     "procs": [
+      [
+       "Avaliação fonoaudiológica",
+       60,
+       180,
+       0
+      ],
+      [
+       "Sessão de fonoterapia",
+       45,
+       130,
+       0
+      ]
+     ]
+    },
+    {
+     "n": "Terapia ocupacional",
+     "procs": [
+      [
+       "Avaliação de terapia ocupacional",
+       60,
+       180,
+       0
+      ],
+      [
+       "Sessão de terapia ocupacional",
+       45,
+       130,
+       0
+      ]
+     ]
+    }
+   ],
+   "profs": [
+    {
+     "n": "Patrícia Moura Leal",
+     "s": 0,
+     "sx": "F",
+     "reg": "CRP 01/00005",
+     "slot": 15,
+     "dias": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "h": [
+      [
+       480,
+       720
+      ],
+      [
+       840,
+       1080
+      ]
+     ]
+    },
+    {
+     "n": "Daniela Cerqueira Lopes",
+     "s": 1,
+     "sx": "F",
+     "reg": "CRFa 5-00001",
+     "slot": 15,
+     "dias": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "h": [
+      [
+       480,
+       720
+      ],
+      [
+       840,
+       1080
+      ]
+     ]
+    },
+    {
+     "n": "Renato Assis Figueira",
+     "s": 2,
+     "sx": "M",
+     "reg": "CREFITO-11 000004-TO",
+     "slot": 15,
+     "dias": [
+      2,
+      3,
+      4
+     ],
+     "h": [
+      [
+       780,
+       1140
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "psicologa-erika-fernandes",
+   "nome": "Psicóloga Erika Fernandes",
+   "curto": "Erika Fernandes Psicologia",
+   "area": "Psicologia e avaliação neuropsicológica",
+   "plano": "essencial",
+   "porte": "6–10 atendimentos/dia",
+   "tel": "(61) 99164-4205",
+   "cor": "#8E5572",
+   "salas": [
+    "Consultório",
+    "Sala de testagem"
+   ],
+   "specs": [
+    {
+     "n": "Psicologia",
+     "procs": [
+      [
+       "Acolhimento inicial",
+       60,
+       180,
+       0
+      ],
+      [
+       "Sessão de psicoterapia",
+       45,
+       160,
+       0
+      ]
+     ]
+    },
+    {
+     "n": "Neuropsicologia",
+     "procs": [
+      [
+       "Anamnese neuropsicológica",
+       60,
+       250,
+       0
+      ],
+      [
+       "Sessão de testagem",
+       60,
+       250,
+       0
+      ],
+      [
+       "Devolutiva e laudo",
+       60,
+       300,
+       0
+      ]
+     ]
+    }
+   ],
+   "profs": [
+    {
+     "n": "Isabela Rocha Damasceno",
+     "s": 0,
+     "sx": "F",
+     "reg": "CRP 01/00006",
+     "slot": 15,
+     "dias": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "h": [
+      [
+       480,
+       720
+      ],
+      [
+       840,
+       1140
+      ]
+     ]
+    },
+    {
+     "n": "Vinícius Parente Godoy",
+     "s": 1,
+     "sx": "M",
+     "reg": "CRP 01/00007",
+     "slot": 60,
+     "dias": [
+      1,
+      3,
+      5
+     ],
+     "h": [
+      [
+       480,
+       720
+      ],
+      [
+       840,
+       1020
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "psicologa-stephani-ganda",
+   "nome": "Psicóloga Stephani Ganda",
+   "curto": "Stephani Ganda Psicologia",
+   "area": "Psicologia adulto, infantil e adolescente",
+   "plano": "essencial",
+   "porte": "6–10 atendimentos/dia",
+   "tel": "(61) 99103-6787",
+   "cor": "#B5838D",
+   "salas": [
+    "Consultório",
+    "Sala infantil"
+   ],
+   "specs": [
+    {
+     "n": "Psicologia adulto",
+     "procs": [
+      [
+       "Sessão de psicoterapia",
+       45,
+       150,
+       0
+      ],
+      [
+       "Sessão on-line",
+       45,
+       140,
+       0
+      ]
+     ]
+    },
+    {
+     "n": "Psicologia infantojuvenil",
+     "procs": [
+      [
+       "Sessão infantil",
+       45,
+       160,
+       0
+      ],
+      [
+       "Sessão para adolescentes",
+       45,
+       160,
+       0
+      ],
+      [
+       "Orientação aos pais",
+       45,
+       160,
+       0
+      ]
+     ]
+    }
+   ],
+   "profs": [
+    {
+     "n": "Larissa Fontes Amaral",
+     "s": 0,
+     "sx": "F",
+     "reg": "CRP 01/00008",
+     "slot": 15,
+     "dias": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "h": [
+      [
+       540,
+       720
+      ],
+      [
+       840,
+       1200
+      ]
+     ]
+    },
+    {
+     "n": "Mariana Siqueira Bastos",
+     "s": 1,
+     "sx": "F",
+     "reg": "CRP 01/00009",
+     "slot": 15,
+     "dias": [
+      1,
+      2,
+      4,
+      5
+     ],
+     "h": [
+      [
+       480,
+       720
+      ],
+      [
+       840,
+       1080
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "clinica-bonifacio",
+   "nome": "Clínica Bonifácio",
+   "curto": "Clínica Bonifácio",
+   "area": "Multiespecialidades, laboratório e imagem",
+   "plano": "centro",
+   "porte": "300–500 atendimentos/dia",
+   "tel": "(61) 3389-6518",
+   "cor": "#0B5D8C",
+   "salas": [
+    "Consultório 1",
+    "Consultório 2",
+    "Consultório 3",
+    "Consultório 4",
+    "Consultório 5",
+    "Consultório 6",
+    "Consultório 7",
+    "Sala de ultrassom",
+    "Sala de coleta",
+    "Sala de raio-X",
+    "Sala de ECG"
+   ],
+   "specs": [
+    {
+     "n": "Clínica médica",
+     "procs": [
+      [
+       "Consulta de clínica médica",
+       15,
+       180,
+       0
+      ],
+      [
+       "Retorno",
+       15,
+       0,
+       30
+      ]
+     ]
+    },
+    {
+     "n": "Cardiologia",
+     "procs": [
+      [
+       "Consulta cardiológica",
+       30,
+       300,
+       0
+      ],
+      [
+       "Retorno",
+       15,
+       0,
+       30
+      ]
+     ]
+    },
+    {
+     "n": "Pediatria",
+     "procs": [
+      [
+       "Consulta pediátrica",
+       30,
+       220,
+       0
+      ],
+      [
+       "Puericultura",
+       30,
+       220,
+       0
+      ],
+      [
+       "Retorno",
+       15,
+       0,
+       15
+      ]
+     ]
+    },
+    {
+     "n": "Ginecologia",
+     "procs": [
+      [
+       "Consulta ginecológica",
+       30,
+       250,
+       0
+      ],
+      [
+       "Preventivo (Papanicolau)",
+       15,
+       120,
+       0
+      ],
+      [
+       "Retorno",
+       15,
+       0,
+       30
+      ]
+     ]
+    },
+    {
+     "n": "Ortopedia",
+     "procs": [
+      [
+       "Consulta ortopédica",
+       15,
+       250,
+       0
+      ],
+      [
+       "Infiltração",
+       30,
+       400,
+       0
+      ],
+      [
+       "Retorno",
+       15,
+       0,
+       30
+      ]
+     ]
+    },
+    {
+     "n": "Dermatologia",
+     "procs": [
+      [
+       "Consulta dermatológica",
+       30,
+       280,
+       0
+      ],
+      [
+       "Retorno",
+       15,
+       0,
+       30
+      ]
+     ]
+    },
+    {
+     "n": "Ultrassonografia",
+     "procs": [
+      [
+       "Ultrassom de abdome total",
+       30,
+       200,
+       0
+      ],
+      [
+       "Ultrassom de tireoide",
+       15,
+       150,
+       0
+      ],
+      [
+       "Ultrassom pélvico",
+       15,
+       150,
+       0
+      ]
+     ]
+    },
+    {
+     "n": "Laboratório",
+     "procs": [
+      [
+       "Coleta de exames laboratoriais",
+       15,
+       0,
+       0
+      ]
+     ]
+    },
+    {
+     "n": "Radiologia",
+     "procs": [
+      [
+       "Raio-X (1 incidência)",
+       15,
+       80,
+       0
+      ],
+      [
+       "Raio-X (2 incidências)",
+       15,
+       120,
+       0
+      ]
+     ]
+    },
+    {
+     "n": "Eletrocardiograma",
+     "procs": [
+      [
+       "Eletrocardiograma",
+       15,
+       90,
+       0
+      ]
+     ]
+    }
+   ],
+   "profs": [
+    {
+     "n": "Carlos Eduardo Brandão",
+     "s": 0,
+     "k": "medico",
+     "sx": "M",
+     "reg": "CRM-DF 00011",
+     "slot": 15,
+     "dias": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "h": [
+      [
+       420,
+       720
+      ],
+      [
+       780,
+       1080
+      ]
+     ]
+    },
+    {
+     "n": "Ana Beatriz Lemos",
+     "s": 0,
+     "k": "medico",
+     "sx": "F",
+     "reg": "CRM-DF 00012",
+     "slot": 15,
+     "dias": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "h": [
+      [
+       780,
+       1140
+      ]
+     ]
+    },
+    {
+     "n": "Roberto Siqueira Lins",
+     "s": 1,
+     "k": "medico",
+     "sx": "M",
+     "reg": "CRM-DF 00013",
+     "slot": 30,
+     "dias": [
+      1,
+      3,
+      5
+     ],
+     "h": [
+      [
+       480,
+       720
+      ],
+      [
+       840,
+       1080
+      ]
+     ]
+    },
+    {
+     "n": "Priscila Antunes Mota",
+     "s": 2,
+     "k": "medico",
+     "sx": "F",
+     "reg": "CRM-DF 00014",
+     "slot": 30,
+     "dias": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "h": [
+      [
+       480,
+       720
+      ],
+      [
+       840,
+       1080
+      ]
+     ]
+    },
+    {
+     "n": "Luciana Ferraz Dutra",
+     "s": 3,
+     "k": "medico",
+     "sx": "F",
+     "reg": "CRM-DF 00015",
+     "slot": 15,
+     "dias": [
+      2,
+      4,
+      6
+     ],
+     "h": [
+      [
+       480,
+       720
+      ],
+      [
+       780,
+       1020
+      ]
+     ]
+    },
+    {
+     "n": "Marcelo Tavares Quintela",
+     "s": 4,
+     "k": "medico",
+     "sx": "M",
+     "reg": "CRM-DF 00016",
+     "slot": 15,
+     "dias": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "h": [
+      [
+       420,
+       720
+      ]
+     ]
+    },
+    {
+     "n": "Gabriela Holanda Pires",
+     "s": 5,
+     "k": "medico",
+     "sx": "F",
+     "reg": "CRM-DF 00017",
+     "slot": 30,
+     "dias": [
+      2,
+      3,
+      4
+     ],
+     "h": [
+      [
+       840,
+       1140
+      ]
+     ]
+    },
+    {
+     "n": "Eduardo Pacheco Rios",
+     "s": 6,
+     "k": "medico",
+     "sx": "M",
+     "reg": "CRM-DF 00018",
+     "slot": 15,
+     "dias": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "h": [
+      [
+       420,
+       720
+      ],
+      [
+       780,
+       1080
+      ]
+     ]
+    },
+    {
+     "n": "Sônia Maria Cardoso",
+     "s": 7,
+     "sx": "F",
+     "reg": "COREN-DF 000001",
+     "slot": 15,
+     "dias": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "h": [
+      [
+       390,
+       660
+      ]
+     ]
+    },
+    {
+     "n": "Wellington Matos Reis",
+     "s": 8,
+     "sx": "M",
+     "reg": "CRTR 00001",
+     "slot": 15,
+     "dias": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "h": [
+      [
+       420,
+       720
+      ],
+      [
+       780,
+       1080
+      ]
+     ]
+    },
+    {
+     "n": "Kátia Regina Fontoura",
+     "s": 9,
+     "sx": "F",
+     "reg": "COREN-DF 000002",
+     "slot": 15,
+     "dias": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "h": [
+      [
+       420,
+       720
+      ],
+      [
+       780,
+       1020
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "centro-clinico-cdc",
+   "nome": "Centro Clínico CDC",
+   "curto": "Centro Clínico CDC",
+   "area": "Ginecologia e obstetrícia, imagem e laboratório",
+   "plano": "centro",
+   "porte": "200–350 atendimentos/dia",
+   "tel": "(61) 3308-1268",
+   "cor": "#A23B72",
+   "salas": [
+    "Consultório 1",
+    "Consultório 2",
+    "Consultório 3",
+    "Consultório 4",
+    "Sala de ultrassom 1",
+    "Sala de mamografia",
+    "Sala de coleta",
+    "Sala de ultrassom 2"
+   ],
+   "specs": [
+    {
+     "n": "Ginecologia",
+     "procs": [
+      [
+       "Consulta ginecológica",
+       30,
+       280,
+       0
+      ],
+      [
+       "Preventivo (Papanicolau)",
+       15,
+       120,
+       0
+      ],
+      [
+       "Inserção de DIU",
+       30,
+       600,
+       0
+      ],
+      [
+       "Retorno",
+       15,
+       0,
+       30
+      ]
+     ]
+    },
+    {
+     "n": "Obstetrícia",
+     "procs": [
+      [
+       "Consulta de pré-natal",
+       30,
+       300,
+       0
+      ],
+      [
+       "Retorno de pré-natal",
+       15,
+       0,
+       30
+      ]
+     ]
+    },
+    {
+     "n": "Mastologia",
+     "procs": [
+      [
+       "Consulta de mastologia",
+       30,
+       300,
+       0
+      ],
+      [
+       "Retorno",
+       15,
+       0,
+       30
+      ]
+     ]
+    },
+    {
+     "n": "Ultrassonografia",
+     "procs": [
+      [
+       "Ultrassom obstétrico",
+       30,
+       220,
+       0
+      ],
+      [
+       "Ultrassom morfológico",
+       60,
+       450,
+       0
+      ],
+      [
+       "Ultrassom transvaginal",
+       15,
+       180,
+       0
+      ],
+      [
+       "Ultrassom de mamas",
+       15,
+       180,
+       0
+      ]
+     ]
+    },
+    {
+     "n": "Mamografia",
+     "procs": [
+      [
+       "Mamografia bilateral",
+       15,
+       200,
+       0
+      ]
+     ]
+    },
+    {
+     "n": "Laboratório",
+     "procs": [
+      [
+       "Coleta de exames laboratoriais",
+       15,
+       0,
+       0
+      ]
+     ]
+    }
+   ],
+   "profs": [
+    {
+     "n": "Renata Albuquerque Sá",
+     "s": 0,
+     "k": "medico",
+     "sx": "F",
+     "reg": "CRM-DF 00021",
+     "slot": 15,
+     "dias": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "h": [
+      [
+       480,
+       720
+      ],
+      [
+       840,
+       1080
+      ]
+     ]
+    },
+    {
+     "n": "Paulo Sérgio Viana",
+     "s": 0,
+     "k": "medico",
+     "sx": "M",
+     "reg": "CRM-DF 00022",
+     "slot": 15,
+     "dias": [
+      2,
+      4,
+      6
+     ],
+     "h": [
+      [
+       480,
+       720
+      ]
+     ]
+    },
+    {
+     "n": "Cláudia Menezes Prado",
+     "s": 1,
+     "k": "medico",
+     "sx": "F",
+     "reg": "CRM-DF 00023",
+     "slot": 30,
+     "dias": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "h": [
+      [
+       480,
+       720
+      ],
+      [
+       840,
+       1080
+      ]
+     ]
+    },
+    {
+     "n": "Beatriz Lobo Carvalhal",
+     "s": 2,
+     "k": "medico",
+     "sx": "F",
+     "reg": "CRM-DF 00024",
+     "slot": 30,
+     "dias": [
+      1,
+      3
+     ],
+     "h": [
+      [
+       840,
+       1140
+      ]
+     ]
+    },
+    {
+     "n": "Fábio Coutinho Leme",
+     "s": 3,
+     "k": "medico",
+     "sx": "M",
+     "reg": "CRM-DF 00025",
+     "slot": 15,
+     "dias": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "h": [
+      [
+       420,
+       720
+      ],
+      [
+       780,
+       1080
+      ]
+     ]
+    },
+    {
+     "n": "Viviane Duarte Saraiva",
+     "s": 4,
+     "sx": "F",
+     "reg": "CRTR 00002",
+     "slot": 15,
+     "dias": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "h": [
+      [
+       420,
+       720
+      ],
+      [
+       780,
+       1020
+      ]
+     ]
+    },
+    {
+     "n": "Joana D'Arc Pimentel",
+     "s": 5,
+     "sx": "F",
+     "reg": "COREN-DF 000003",
+     "slot": 15,
+     "dias": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "h": [
+      [
+       390,
+       660
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "centro-medico-nexo",
+   "nome": "Centro Médico Nexo",
+   "curto": "Centro Médico Nexo",
+   "area": "Clínica geral, neurologia, cardiologia e laboratório",
+   "plano": "centro",
+   "porte": "100–180 atendimentos/dia",
+   "tel": "(61) 3771-7033",
+   "cor": "#2B4C7E",
+   "salas": [
+    "Consultório 1",
+    "Consultório 2",
+    "Consultório 3",
+    "Consultório 4",
+    "Sala de ECG",
+    "Sala de EEG",
+    "Sala de coleta"
+   ],
+   "specs": [
+    {
+     "n": "Clínica geral",
+     "procs": [
+      [
+       "Consulta de clínica geral",
+       15,
+       180,
+       0
+      ],
+      [
+       "Retorno",
+       15,
+       0,
+       30
+      ]
+     ]
+    },
+    {
+     "n": "Neurologia",
+     "procs": [
+      [
+       "Consulta neurológica",
+       30,
+       350,
+       0
+      ],
+      [
+       "Retorno",
+       15,
+       0,
+       30
+      ]
+     ]
+    },
+    {
+     "n": "Cardiologia",
+     "procs": [
+      [
+       "Consulta cardiológica",
+       30,
+       300,
+       0
+      ],
+      [
+       "Retorno",
+       15,
+       0,
+       30
+      ]
+     ]
+    },
+    {
+     "n": "Exames cardiológicos",
+     "procs": [
+      [
+       "Eletrocardiograma",
+       15,
+       90,
+       0
+      ],
+      [
+       "Teste ergométrico",
+       30,
+       300,
+       0
+      ],
+      [
+       "Holter 24 h (instalação)",
+       15,
+       250,
+       0
+      ]
+     ]
+    },
+    {
+     "n": "Eletroencefalograma",
+     "procs": [
+      [
+       "Eletroencefalograma",
+       60,
+       280,
+       0
+      ]
+     ]
+    },
+    {
+     "n": "Laboratório",
+     "procs": [
+      [
+       "Coleta de exames laboratoriais",
+       15,
+       0,
+       0
+      ]
+     ]
+    }
+   ],
+   "profs": [
+    {
+     "n": "André Luiz Cavalcante",
+     "s": 0,
+     "k": "medico",
+     "sx": "M",
+     "reg": "CRM-DF 00031",
+     "slot": 15,
+     "dias": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "h": [
+      [
+       420,
+       720
+      ],
+      [
+       780,
+       1080
+      ]
+     ]
+    },
+    {
+     "n": "Tatiana Brum Esteves",
+     "s": 0,
+     "k": "medico",
+     "sx": "F",
+     "reg": "CRM-DF 00032",
+     "slot": 15,
+     "dias": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "h": [
+      [
+       780,
+       1140
+      ]
+     ]
+    },
+    {
+     "n": "Ricardo Amaral Bittencourt",
+     "s": 1,
+     "k": "medico",
+     "sx": "M",
+     "reg": "CRM-DF 00033",
+     "slot": 30,
+     "dias": [
+      2,
+      4
+     ],
+     "h": [
+      [
+       480,
+       720
+      ],
+      [
+       840,
+       1080
+      ]
+     ]
+    },
+    {
+     "n": "Simone Guedes Falcão",
+     "s": 2,
+     "k": "medico",
+     "sx": "F",
+     "reg": "CRM-DF 00034",
+     "slot": 30,
+     "dias": [
+      1,
+      3,
+      5
+     ],
+     "h": [
+      [
+       480,
+       720
+      ],
+      [
+       840,
+       1080
+      ]
+     ]
+    },
+    {
+     "n": "Leandro Pinheiro Costa",
+     "s": 3,
+     "sx": "M",
+     "reg": "COREN-DF 000004",
+     "slot": 15,
+     "dias": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "h": [
+      [
+       420,
+       720
+      ],
+      [
+       780,
+       1020
+      ]
+     ]
+    },
+    {
+     "n": "Elaine Martins Bezerra",
+     "s": 4,
+     "sx": "F",
+     "reg": "CRBM 00001",
+     "slot": 60,
+     "dias": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "h": [
+      [
+       480,
+       720
+      ],
+      [
+       840,
+       1020
+      ]
+     ]
+    },
+    {
+     "n": "Rosângela Teixeira Lima",
+     "s": 5,
+     "sx": "F",
+     "reg": "COREN-DF 000005",
+     "slot": 15,
+     "dias": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "h": [
+      [
+       390,
+       660
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "dr-paulo-lemes-eye-clinic",
+   "nome": "Dr. Paulo Lemes Eye Clinic",
+   "curto": "Paulo Lemes Eye Clinic",
+   "area": "Oftalmologia e cirurgias",
+   "plano": "centro",
+   "porte": "80–130 atendimentos/dia",
+   "tel": "(61) 3389-7690",
+   "cor": "#00707A",
+   "salas": [
+    "Consultório 1",
+    "Consultório 2",
+    "Consultório 3",
+    "Consultório 4",
+    "Sala de exames",
+    "Centro cirúrgico"
+   ],
+   "specs": [
+    {
+     "n": "Oftalmologia geral",
+     "procs": [
+      [
+       "Consulta oftalmológica",
+       15,
+       250,
+       0
+      ],
+      [
+       "Retorno",
+       15,
+       0,
+       30
+      ],
+      [
+       "Mapeamento de retina",
+       15,
+       180,
+       0
+      ]
+     ]
+    },
+    {
+     "n": "Retina",
+     "procs": [
+      [
+       "Consulta de retina",
+       30,
+       350,
+       0
+      ],
+      [
+       "Injeção intravítrea",
+       30,
+       1500,
+       0
+      ],
+      [
+       "Retorno",
+       15,
+       0,
+       30
+      ]
+     ]
+    },
+    {
+     "n": "Glaucoma",
+     "procs": [
+      [
+       "Consulta de glaucoma",
+       30,
+       350,
+       0
+      ],
+      [
+       "Curva tensional",
+       30,
+       200,
+       0
+      ],
+      [
+       "Retorno",
+       15,
+       0,
+       60
+      ]
+     ]
+    },
+    {
+     "n": "Exames oftalmológicos",
+     "procs": [
+      [
+       "OCT",
+       15,
+       250,
+       0
+      ],
+      [
+       "Campimetria",
+       30,
+       200,
+       0
+      ],
+      [
+       "Topografia de córnea",
+       15,
+       180,
+       0
+      ],
+      [
+       "Biometria",
+       15,
+       200,
+       0
+      ]
+     ]
+    },
+    {
+     "n": "Cirurgia oftalmológica",
+     "procs": [
+      [
+       "Cirurgia de catarata",
+       60,
+       5500,
+       0
+      ],
+      [
+       "Cirurgia de pterígio",
+       60,
+       2500,
+       0
+      ],
+      [
+       "Retorno pós-operatório",
+       15,
+       0,
+       30
+      ]
+     ]
+    }
+   ],
+   "profs": [
+    {
+     "n": "Henrique Bastos Valadares",
+     "s": 0,
+     "k": "medico",
+     "sx": "M",
+     "reg": "CRM-DF 00041",
+     "slot": 15,
+     "dias": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "h": [
+      [
+       480,
+       720
+      ],
+      [
+       840,
+       1080
+      ]
+     ]
+    },
+    {
+     "n": "Natália Correia Azevedo",
+     "s": 0,
+     "k": "medico",
+     "sx": "F",
+     "reg": "CRM-DF 00042",
+     "slot": 15,
+     "dias": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "h": [
+      [
+       420,
+       720
+      ]
+     ]
+    },
+    {
+     "n": "Otávio Machado Freire",
+     "s": 1,
+     "k": "medico",
+     "sx": "M",
+     "reg": "CRM-DF 00043",
+     "slot": 30,
+     "dias": [
+      2,
+      4
+     ],
+     "h": [
+      [
+       480,
+       720
+      ],
+      [
+       840,
+       1080
+      ]
+     ]
+    },
+    {
+     "n": "Cristina Albuquerque Neves",
+     "s": 2,
+     "k": "medico",
+     "sx": "F",
+     "reg": "CRM-DF 00044",
+     "slot": 30,
+     "dias": [
+      1,
+      3,
+      5
+     ],
+     "h": [
+      [
+       840,
+       1140
+      ]
+     ]
+    },
+    {
+     "n": "Douglas Ferreira Ramos",
+     "s": 3,
+     "sx": "M",
+     "reg": "Técnico em oftalmologia",
+     "slot": 15,
+     "dias": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "h": [
+      [
+       420,
+       720
+      ],
+      [
+       780,
+       1080
+      ]
+     ]
+    },
+    {
+     "n": "Henrique Bastos Valadares (centro cirúrgico)",
+     "s": 4,
+     "k": "medico",
+     "sx": "M",
+     "reg": "CRM-DF 00041",
+     "slot": 60,
+     "dias": [
+      6
+     ],
+     "h": [
+      [
+       420,
+       720
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "clinica-de-olhos-imagem",
+   "nome": "Clínica de Olhos Imagem",
+   "curto": "Olhos Imagem",
+   "area": "Oftalmologia",
+   "plano": "centro",
+   "porte": "60–100 atendimentos/dia",
+   "tel": "(61) 3388-0304",
+   "cor": "#3D5A80",
+   "salas": [
+    "Consultório 1",
+    "Consultório 2",
+    "Consultório 3",
+    "Sala de exames"
+   ],
+   "specs": [
+    {
+     "n": "Oftalmologia",
+     "procs": [
+      [
+       "Consulta oftalmológica",
+       15,
+       230,
+       0
+      ],
+      [
+       "Retorno",
+       15,
+       0,
+       30
+      ],
+      [
+       "Teste do olhinho / avaliação infantil",
+       30,
+       200,
+       0
+      ]
+     ]
+    },
+    {
+     "n": "Lentes de contato",
+     "procs": [
+      [
+       "Adaptação de lentes de contato",
+       30,
+       250,
+       0
+      ]
+     ]
+    },
+    {
+     "n": "Exames oftalmológicos",
+     "procs": [
+      [
+       "Mapeamento de retina",
+       15,
+       180,
+       0
+      ],
+      [
+       "Tonometria",
+       15,
+       80,
+       0
+      ],
+      [
+       "Campimetria",
+       30,
+       200,
+       0
+      ],
+      [
+       "Paquimetria",
+       15,
+       150,
+       0
+      ]
+     ]
+    }
+   ],
+   "profs": [
+    {
+     "n": "Fernando Augusto Peixoto",
+     "s": 0,
+     "k": "medico",
+     "sx": "M",
+     "reg": "CRM-DF 00051",
+     "slot": 15,
+     "dias": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "h": [
+      [
+       480,
+       720
+      ],
+      [
+       840,
+       1080
+      ]
+     ]
+    },
+    {
+     "n": "Lívia Monteiro Castro",
+     "s": 0,
+     "k": "medico",
+     "sx": "F",
+     "reg": "CRM-DF 00052",
+     "slot": 15,
+     "dias": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "h": [
+      [
+       420,
+       720
+      ]
+     ]
+    },
+    {
+     "n": "Sérgio Lopes Montenegro",
+     "s": 1,
+     "k": "medico",
+     "sx": "M",
+     "reg": "CRM-DF 00053",
+     "slot": 30,
+     "dias": [
+      2,
+      4
+     ],
+     "h": [
+      [
+       840,
+       1080
+      ]
+     ]
+    },
+    {
+     "n": "Adriana Celestino Moura",
+     "s": 2,
+     "sx": "F",
+     "reg": "Técnica em oftalmologia",
+     "slot": 15,
+     "dias": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "h": [
+      [
+       420,
+       720
+      ],
+      [
+       780,
+       1080
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "gynocare",
+   "nome": "Gynocare · Ginecologia",
+   "curto": "Gynocare",
+   "area": "Ginecologia, colposcopia e ultrassom",
+   "plano": "centro",
+   "porte": "50–90 atendimentos/dia",
+   "tel": "(61) 98176-8838",
+   "cor": "#9C4F96",
+   "salas": [
+    "Consultório 1",
+    "Consultório 2",
+    "Sala de colposcopia",
+    "Sala de ultrassom"
+   ],
+   "specs": [
+    {
+     "n": "Ginecologia",
+     "procs": [
+      [
+       "Consulta ginecológica",
+       30,
+       300,
+       0
+      ],
+      [
+       "Preventivo (Papanicolau)",
+       15,
+       120,
+       0
+      ],
+      [
+       "Retorno",
+       15,
+       0,
+       30
+      ]
+     ]
+    },
+    {
+     "n": "Colposcopia",
+     "procs": [
+      [
+       "Colposcopia",
+       30,
+       250,
+       0
+      ],
+      [
+       "Vulvoscopia",
+       30,
+       250,
+       0
+      ],
+      [
+       "Biópsia de colo",
+       30,
+       450,
+       0
+      ]
+     ]
+    },
+    {
+     "n": "Ultrassonografia",
+     "procs": [
+      [
+       "Ultrassom transvaginal",
+       15,
+       180,
+       0
+      ],
+      [
+       "Ultrassom pélvico",
+       15,
+       160,
+       0
+      ],
+      [
+       "Ultrassom de mamas",
+       15,
+       180,
+       0
+      ],
+      [
+       "Ultrassom obstétrico",
+       30,
+       220,
+       0
+      ]
+     ]
+    }
+   ],
+   "profs": [
+    {
+     "n": "Alessandra Viegas Mourão",
+     "s": 0,
+     "k": "medico",
+     "sx": "F",
+     "reg": "CRM-DF 00061",
+     "slot": 15,
+     "dias": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "h": [
+      [
+       480,
+       720
+      ],
+      [
+       840,
+       1080
+      ]
+     ]
+    },
+    {
+     "n": "Marcos Vinícius Teodoro",
+     "s": 0,
+     "k": "medico",
+     "sx": "M",
+     "reg": "CRM-DF 00062",
+     "slot": 15,
+     "dias": [
+      2,
+      4,
+      6
+     ],
+     "h": [
+      [
+       480,
+       720
+      ]
+     ]
+    },
+    {
+     "n": "Raquel Barreto Simões",
+     "s": 1,
+     "k": "medico",
+     "sx": "F",
+     "reg": "CRM-DF 00063",
+     "slot": 30,
+     "dias": [
+      1,
+      3,
+      5
+     ],
+     "h": [
+      [
+       840,
+       1080
+      ]
+     ]
+    },
+    {
+     "n": "Igor Nascimento Prates",
+     "s": 2,
+     "k": "medico",
+     "sx": "M",
+     "reg": "CRM-DF 00064",
+     "slot": 15,
+     "dias": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "h": [
+      [
+       420,
+       720
+      ],
+      [
+       780,
+       1020
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}
