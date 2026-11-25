@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ad+ · Prontuário e IA para clínicas</title>
+<meta name="description" content="Agenda, prontuário por especialidade, financeiro e assistente de IA no WhatsApp, montados do jeito da sua clínica.">
+<meta property="og:title" content="Ad+ · Prontuário e IA para clínicas">
+<meta property="og:description" content="O prontuário que aprende o jeito da sua clínica.">
+<meta name="theme-color" content="#082A2E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23082A2E'/%3E%3Ctext x='8' y='44' font-family='Arial' font-weight='900' font-style='italic' font-size='34' fill='%23EAF4F6'%3Ead%3Ctspan fill='%237CC4E0'%3E+%3C/tspan%3E%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,800;1,900&amp;family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&amp;display=swap">
+<style>
+body{margin:0;background:#082A2E}
+a{color:#BFE3F2}a:hover{color:#FFFFFF}
+<style>html{scroll-behavior:smooth}@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}</style>
+</head>
+<body>
+<div style="font-family: Inter, system-ui, sans-serif; color: #EAF4F6; background: #082A2E; min-height: 100vh">
+
+<header style="position: sticky; top: 0; z-index: 10; background: rgba(8,42,46,0.92); border-bottom: 1px solid #1D4A4F">
+<div style="max-width: 1200px; margin: 0 auto; padding: 18px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+<a href="#topo" aria-label="Ad+ início" style="text-decoration: none; font-weight: 900; font-style: italic; font-size: 34px; letter-spacing: -0.05em; color: #EAF4F6; line-height: 1">ad<span style="color: #7CC4E0">+</span></a>
+<nav aria-label="Principal" style="display: flex; flex-wrap: wrap; gap: 28px; font-size: 15px; font-weight: 500">
+<a href="#recursos" style="text-decoration: none">Recursos</a>
+<a href="#ia" style="text-decoration: none">IA no WhatsApp</a>
+<a href="#especialidades" style="text-decoration: none">Especialidades</a>
+<a href="#planos" style="text-decoration: none">Planos</a>
+</nav>
+<a href="#contato" style="text-decoration: none; background: #7CC4E0; color: #062126; font-weight: 600; font-size: 15px; padding: 12px 20px; border-radius: 999px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">Agendar demonstração</a>
+</div>
+</header>
+
+<section id="topo" style="position: relative; overflow: hidden; padding: 40px 24px 72px; display: flex; flex-direction: column; align-items: center">
+<div style="position: relative; width: min(780px, 100%); aspect-ratio: 1 / 1">
+<canvas id="poeira" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%"></canvas>
+<div style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 0 18%">
+<p style="margin: 0 0 18px; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #7CC4E0">Prontuário + IA para clínicas</p>
+<h1 style="margin: 0; font-family: 'Source Serif 4', Georgia, serif; font-weight: 700; font-size: 52px; line-height: 1.08; letter-spacing: -0.01em">O prontuário que aprende o jeito da sua clínica</h1>
+</div>
+</div>
+<p style="margin: 8px 0 0; max-width: 640px; text-align: center; font-size: 19px; line-height: 1.55; color: #A9CBD1">Agenda, prontuário por especialidade, financeiro e um assistente de IA no WhatsApp, montados do jeito que a sua equipe trabalha e com a marca da sua clínica.</p>
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 28px">
+<a href="#contato" style="text-decoration: none; background: #7CC4E0; color: #062126; font-weight: 600; font-size: 16px; padding: 14px 26px; border-radius: 999px; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center">Agendar demonstração</a>
+<a href="#planos" style="text-decoration: none; border: 1px solid #3E6E74; color: #EAF4F6; font-weight: 600; font-size: 16px; padding: 14px 26px; border-radius: 999px; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center">Ver planos</a>
+</div>
+</section>
+
+<section aria-label="Diferenciais" style="border-top: 1px solid #1D4A4F; border-bottom: 1px solid #1D4A4F">
+<div style="max-width: 1200px; margin: 0 auto; padding: 32px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px">
+<div style="display: flex; flex-direction: column; gap: 6px"><strong style="font-size: 17px">Profissionais ilimitados</strong><span style="font-size: 15px; color: #A9CBD1">Um preço por clínica, sem cobrar por cabeça.</span></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><strong style="font-size: 17px">Com a cara da sua clínica</strong><span style="font-size: 15px; color: #A9CBD1">Logo, cores e papel timbrado. O Ad+ fica ao lado.</span></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><strong style="font-size: 17px">Prontuário sem rasura</strong><span style="font-size: 15px; color: #A9CBD1">Cada mudança vira versão. Nada se apaga.</span></div>
+<div style="display: flex; flex-direction: column; gap: 6px"><strong style="font-size: 17px">IA 24 horas no WhatsApp</strong><span style="font-size: 15px; color: #A9CBD1">Agenda, lembra e confirma sozinha.</span></div>
+</div>
+</section>
+
+<section id="recursos" style="max-width: 1200px; margin: 0 auto; padding: 96px 24px">
+<h2 style="margin: 0 0 12px; font-family: 'Source Serif 4', Georgia, serif; font-size: 40px; font-weight: 700">Por dentro e por fora da clínica</h2>
+<p style="margin: 0 0 40px; max-width: 620px; font-size: 18px; line-height: 1.55; color: #A9CBD1">Tudo o que a equipe usa no dia a dia e tudo o que a família vê, no mesmo sistema.</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px">
+<div style="background: #0E3A3F; border: 1px solid #1D4A4F; border-radius: 20px; padding: 32px; display: flex; flex-direction: column; gap: 16px">
+<p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #7CC4E0">Por dentro · para a equipe</p>
+<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 12px; font-size: 17px; line-height: 1.45">
+<li>Agenda por profissional, recepção e fila de espera</li>
+<li>Pacientes, pacotes de sessões e eventos</li>
+<li>Financeiro, repasses e fechamento de caixa</li>
+<li>Prontuário por especialidade, com metas e evolução</li>
+<li>Permissões por perfil e registro de acessos</li>
+<li>Gravação e transcrição da sessão, com autorização</li>
+</ul>
+</div>
+<div style="background: #0E3A3F; border: 1px solid #1D4A4F; border-radius: 20px; padding: 32px; display: flex; flex-direction: column; gap: 16px">
+<p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #7CC4E0">Por fora · para famílias e pacientes</p>
+<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 12px; font-size: 17px; line-height: 1.45">
+<li>Link seguro para ver documentos e evolução</li>
+<li>Confirmação de consulta pelo WhatsApp</li>
+<li>Parabéns de aniversário em um clique</li>
+<li>Oficinas e eventos com inscrição e Pix</li>
+<li>Relatórios no papel timbrado da clínica</li>
+<li>Agenda do dia seguinte por e-mail para cada profissional</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section id="ia" style="background: #0B3337; border-top: 1px solid #1D4A4F; border-bottom: 1px solid #1D4A4F">
+<div style="max-width: 1200px; margin: 0 auto; padding: 96px 24px; display: flex; flex-wrap: wrap; gap: 56px; align-items: center">
+<div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+<p style="margin: 0; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #7CC4E0">Assistente de WhatsApp com IA</p>
+<h2 style="margin: 0; font-family: 'Source Serif 4', Georgia, serif; font-size: 40px; line-height: 1.12; font-weight: 700">A recepção que responde às 23h, sem esquecer ninguém</h2>
+<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 12px; font-size: 17px; line-height: 1.45; color: #D3E7EB">
+<li>Agenda, remarca e cancela conforme as regras da agenda</li>
+<li>Envia lembrete e pede confirmação na véspera</li>
+<li>Responde horários, endereço, valores e preparo</li>
+<li>Passa para a recepção quando a conversa pede uma pessoa</li>
+</ul>
+<p style="margin: 0; font-size: 15px; line-height: 1.5; color: #A9CBD1">Não dá orientação clínica e não lê o prontuário. A família sabe que fala com um assistente.</p>
+</div>
+<div style="flex: 1 1 420px; min-width: 0; background: #082A2E; border: 1px solid #1D4A4F; border-radius: 24px; padding: 24px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; align-items: center; gap: 12px; padding-bottom: 14px; border-bottom: 1px solid #1D4A4F">
+<div aria-hidden="true" style="position: relative; width: 44px; height: 44px; border-radius: 50%; background: radial-gradient(circle, rgba(124,196,224,0.35) 0%, rgba(124,196,224,0) 70%); border: 1px dashed #7CC4E0"></div>
+<div style="display: flex; flex-direction: column"><strong style="font-size: 15px">Assistente da clínica</strong><span style="font-size: 13px; color: #A9CBD1">WhatsApp oficial · ilustração</span></div>
+</div>
+<div style="align-self: flex-end; max-width: 78%; background: #1F5A60; border-radius: 16px 16px 4px 16px; padding: 12px 14px; font-size: 15px; line-height: 1.45">Oi! Quero marcar fono para o Joaquim, de preferência de manhã.</div>
+<div style="align-self: flex-start; max-width: 78%; background: #123F44; border: 1px solid #1D4A4F; border-radius: 16px 16px 16px 4px; padding: 12px 14px; font-size: 15px; line-height: 1.45">Olá! Tenho terça às 9h ou quinta às 10h com a fonoaudióloga Ana. Qual prefere?</div>
+<div style="align-self: flex-end; max-width: 78%; background: #1F5A60; border-radius: 16px 16px 4px 16px; padding: 12px 14px; font-size: 15px; line-height: 1.45">Quinta às 10h.</div>
+<div style="align-self: flex-start; max-width: 78%; background: #123F44; border: 1px solid #1D4A4F; border-radius: 16px 16px 16px 4px; padding: 12px 14px; font-size: 15px; line-height: 1.45">Pronto! Agendado para quinta às 10h. Mando um lembrete na véspera.</div>
+</div>
+</div>
+</section>
+
+<section id="especialidades" style="max-width: 1200px; margin: 0 auto; padding: 96px 24px">
+<h2 style="margin: 0 0 12px; font-family: 'Source Serif 4', Georgia, serif; font-size: 40px; font-weight: 700">Um prontuário para cada especialidade</h2>
+<p style="margin: 0 0 40px; max-width: 640px; font-size: 18px; line-height: 1.55; color: #A9CBD1">Cada área tem campos, instrumentos e rótulos próprios. O que é comum (anamnese, metas, sessão, evolução) é compartilhado pela equipe.</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px">
+<div style="border: 1px solid #1D4A4F; border-radius: 16px; padding: 22px; display: flex; flex-direction: column; gap: 8px"><strong style="font-size: 18px">Fonoaudiologia</strong><span style="font-size: 15px; line-height: 1.45; color: #A9CBD1">Linguagem, fala, motricidade orofacial e comunicação alternativa</span></div>
+<div style="border: 1px solid #1D4A4F; border-radius: 16px; padding: 22px; display: flex; flex-direction: column; gap: 8px"><strong style="font-size: 18px">Terapia ocupacional</strong><span style="font-size: 15px; line-height: 1.45; color: #A9CBD1">AVD, motricidade, integração sensorial e brincar</span></div>
+<div style="border: 1px solid #1D4A4F; border-radius: 16px; padding: 22px; display: flex; flex-direction: column; gap: 8px"><strong style="font-size: 18px">Psicologia</strong><span style="font-size: 15px; line-height: 1.45; color: #A9CBD1">Regulação emocional, comportamento e habilidades sociais</span></div>
+<div style="border: 1px solid #1D4A4F; border-radius: 16px; padding: 22px; display: flex; flex-direction: column; gap: 8px"><strong style="font-size: 18px">Psicopedagogia</strong><span style="font-size: 15px; line-height: 1.45; color: #A9CBD1">Leitura, escrita, matemática e vínculo com a aprendizagem</span></div>
+<div style="border: 1px solid #1D4A4F; border-radius: 16px; padding: 22px; display: flex; flex-direction: column; gap: 8px"><strong style="font-size: 18px">Neuropsicologia</strong><span style="font-size: 15px; line-height: 1.45; color: #A9CBD1">Domínios cognitivos, escala própria e testes registrados</span></div>
+<div style="border: 1px solid #1D4A4F; border-radius: 16px; padding: 22px; display: flex; flex-direction: column; gap: 8px"><strong style="font-size: 18px">Neuropsicopedagogia</strong><span style="font-size: 15px; line-height: 1.45; color: #A9CBD1">Funções executivas, cálculo e raciocínio</span></div>
+<div style="border: 1px solid #1D4A4F; border-radius: 16px; padding: 22px; display: flex; flex-direction: column; gap: 8px"><strong style="font-size: 18px">Nutrição infantil</strong><span style="font-size: 15px; line-height: 1.45; color: #A9CBD1">Antropometria, gasto energético e plano alimentar</span></div>
+<div style="border: 1px solid #7CC4E0; border-radius: 16px; padding: 22px; display: flex; flex-direction: column; gap: 8px"><strong style="font-size: 18px">Clínicas médicas</strong><span style="font-size: 15px; line-height: 1.45; color: #A9CBD1">Ortopedia, ginecologia, pediatria, psiquiatria e mais, com abas por especialidade</span></div>
+</div>
+</section>
+
+<section aria-label="Privacidade" style="background: #0B3337; border-top: 1px solid #1D4A4F; border-bottom: 1px solid #1D4A4F">
+<div style="max-width: 1200px; margin: 0 auto; padding: 80px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px">
+<div style="display: flex; flex-direction: column; gap: 10px"><h3 style="margin: 0; font-family: 'Source Serif 4', Georgia, serif; font-size: 24px">Privado por padrão</h3><p style="margin: 0; font-size: 16px; line-height: 1.5; color: #A9CBD1">O registro clínico é visível só para quem atendeu. Recepção e administração não leem.</p></div>
+<div style="display: flex; flex-direction: column; gap: 10px"><h3 style="margin: 0; font-family: 'Source Serif 4', Georgia, serif; font-size: 24px">Registro de acessos</h3><p style="margin: 0; font-size: 16px; line-height: 1.5; color: #A9CBD1">Quem abriu, salvou ou compartilhou, e quando, sem mostrar o conteúdo clínico.</p></div>
+<div style="display: flex; flex-direction: column; gap: 10px"><h3 style="margin: 0; font-family: 'Source Serif 4', Georgia, serif; font-size: 24px">Pensado para a LGPD</h3><p style="margin: 0; font-size: 16px; line-height: 1.5; color: #A9CBD1">Banco de dados separado para cada clínica, com cópia de segurança e guarda de longo prazo.</p></div>
+</div>
+</section>
+
+<section id="planos" style="max-width: 1200px; margin: 0 auto; padding: 96px 24px">
+<h2 style="margin: 0 0 12px; font-family: 'Source Serif 4', Georgia, serif; font-size: 40px; font-weight: 700">Planos pelo tamanho da clínica</h2>
+<p style="margin: 0 0 40px; max-width: 640px; font-size: 18px; line-height: 1.55; color: #A9CBD1">Sem cobrança por profissional dentro da faixa. O primeiro mês é de adaptação sob medida.</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; align-items: stretch">
+<div style="background: #0E3A3F; border: 1px solid #1D4A4F; border-radius: 20px; padding: 32px; display: flex; flex-direction: column; gap: 14px">
+<strong style="font-size: 20px">Essencial</strong>
+<span style="font-size: 15px; color: #A9CBD1">Até 3 profissionais</span>
+<div style="display: flex; align-items: baseline; gap: 6px"><span style="font-family: 'Source Serif 4', Georgia, serif; font-size: 44px; font-weight: 700">R$ 297</span><span style="font-size: 15px; color: #A9CBD1">/mês</span></div>
+<span style="font-size: 15px; color: #A9CBD1">Adaptação R$ 350</span>
+<ul style="margin: 8px 0 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px; font-size: 15px; line-height: 1.45"><li>Modelo pronto da especialidade</li><li>Agenda, prontuário e financeiro</li><li>Link seguro da família</li></ul>
+<a href="#contato" style="margin-top: auto; text-decoration: none; border: 1px solid #3E6E74; color: #EAF4F6; font-weight: 600; font-size: 15px; padding: 12px 20px; border-radius: 999px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center; justify-content: center">Quero o Essencial</a>
+</div>
+<div style="background: #0E3A3F; border: 2px solid #7CC4E0; border-radius: 20px; padding: 32px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 8px"><strong style="font-size: 20px">Clínica</strong><span style="font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; background: #7CC4E0; color: #062126; padding: 4px 10px; border-radius: 999px">Recomendado</span></div>
+<span style="font-size: 15px; color: #A9CBD1">4 a 12 profissionais</span>
+<div style="display: flex; align-items: baseline; gap: 6px"><span style="font-family: 'Source Serif 4', Georgia, serif; font-size: 44px; font-weight: 700">R$ 647</span><span style="font-size: 15px; color: #A9CBD1">/mês</span></div>
+<span style="font-size: 15px; color: #A9CBD1">Adaptação R$ 750</span>
+<ul style="margin: 8px 0 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px; font-size: 15px; line-height: 1.45"><li>Reunião com cada profissional</li><li>Pacotes, eventos e repasses</li><li>Metas com gráfico e relatórios</li></ul>
+<a href="#contato" style="margin-top: auto; text-decoration: none; background: #7CC4E0; color: #062126; font-weight: 600; font-size: 15px; padding: 12px 20px; border-radius: 999px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center; justify-content: center">Quero o Clínica</a>
+</div>
+<div style="background: #0E3A3F; border: 1px solid #1D4A4F; border-radius: 20px; padding: 32px; display: flex; flex-direction: column; gap: 14px">
+<strong style="font-size: 20px">Centro</strong>
+<span style="font-size: 15px; color: #A9CBD1">13+ profissionais, exames ou várias unidades</span>
+<div style="display: flex; align-items: baseline; gap: 6px"><span style="font-family: 'Source Serif 4', Georgia, serif; font-size: 44px; font-weight: 700">R$ 1.190</span><span style="font-size: 15px; color: #A9CBD1">/mês</span></div>
+<span style="font-size: 15px; color: #A9CBD1">Adaptação R$ 1.500</span>
+<ul style="margin: 8px 0 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px; font-size: 15px; line-height: 1.45"><li>Reunião por setor</li><li>Laudos e exames</li><li>Suporte prioritário</li></ul>
+<a href="#contato" style="margin-top: auto; text-decoration: none; border: 1px solid #3E6E74; color: #EAF4F6; font-weight: 600; font-size: 15px; padding: 12px 20px; border-radius: 999px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center; justify-content: center">Falar sobre o Centro</a>
+</div>
+</div>
+<p style="margin: 24px 0 0; font-size: 15px; line-height: 1.5; color: #A9CBD1">Assistente de WhatsApp com IA a partir de R$ 197/mês · Gravação e transcrição R$ 247/mês · Fidelidade de 12 meses · No plano anual, 1 mês grátis</p>
+</section>
+
+<section id="contato" style="position: relative; overflow: hidden; border-top: 1px solid #1D4A4F">
+<div style="max-width: 1200px; margin: 0 auto; padding: 96px 24px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 20px">
+<h2 style="margin: 0; max-width: 720px; font-family: 'Source Serif 4', Georgia, serif; font-size: 44px; line-height: 1.1; font-weight: 700">Vamos montar o Ad+ da sua clínica?</h2>
+<p style="margin: 0; max-width: 560px; font-size: 18px; line-height: 1.55; color: #A9CBD1">Uma conversa de 30 minutos para conhecer a rotina da equipe e mostrar o sistema funcionando.</p>
+<a href="mailto:contato@adplus.app.br" style="text-decoration: none; background: #7CC4E0; color: #062126; font-weight: 600; font-size: 16px; padding: 14px 28px; border-radius: 999px; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center">Fale com a gente</a>
+</div>
+</section>
+
+<footer style="border-top: 1px solid #1D4A4F">
+<div style="max-width: 1200px; margin: 0 auto; padding: 32px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; font-size: 14px; color: #A9CBD1">
+<span><span style="font-weight: 900; font-style: italic; font-size: 20px; letter-spacing: -0.05em; color: #EAF4F6">ad<span style="color: #7CC4E0">+</span></span>  Ad Plus Tecnologia Ltda</span>
+<span>Planaltina, DF</span>
+</div>
+</footer>
+
+</div>
+<script>
+(function(){
+  var c=document.getElementById('poeira'); if(!c) return;
+  var x=c.getContext('2d'), dpr=Math.min(window.devicePixelRatio||1,2), W=0, P=[];
+  var reduz=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var a=11>>>0; function rnd(){a=(a+0x6D2B79F5)|0;var t=Math.imul(a^(a>>>15),1|a);t=(t+Math.imul(t^(t>>>7),61|t))^t;return((t^(t>>>14))>>>0)/4294967296;}
+  function g(){var u=0;while(u===0)u=rnd();return Math.sqrt(-2*Math.log(u))*Math.cos(2*Math.PI*rnd());}
+  var cores=['255,255,255','214,238,247','124,196,224','124,196,224'];
+  [[315,0.36,0.018,1],[225,0.355,0.045,-0.65],[160,0.37,0.11,0.4]].forEach(function(l){
+    for(var i=0;i<l[0];i++){P.push({th:rnd()*Math.PI*2,r:l[1]+g()*l[2],s:0.8+rnd()*rnd()*3.2,o:0.2+rnd()*0.8,c:cores[Math.floor(rnd()*4)],v:l[3]});}
+  });
+  function tam(){var w=c.clientWidth; if(!w) return; W=w; c.width=w*dpr; c.height=w*dpr;}
+  function desenha(t){
+    if(!W) tam(); x.setTransform(dpr,0,0,dpr,0,0); x.clearRect(0,0,W,W);
+    var cx=W/2, esc=W/700, resp=1+0.03*Math.sin(t/1100), giro=t/14000;
+    var gr=x.createRadialGradient(cx,cx,0,cx,cx,W*0.36);
+    gr.addColorStop(0,'rgba(124,196,224,0.14)'); gr.addColorStop(0.6,'rgba(124,196,224,0.04)'); gr.addColorStop(1,'rgba(124,196,224,0)');
+    x.fillStyle=gr; x.beginPath(); x.arc(cx,cx,W*0.36,0,Math.PI*2); x.fill();
+    for(var i=0;i<P.length;i++){var p=P[i], th=p.th+giro*p.v, r=p.r*W*resp;
+      x.fillStyle='rgba('+p.c+','+p.o+')'; x.beginPath(); x.arc(cx+Math.cos(th)*r, cx+Math.sin(th)*r, p.s*esc, 0, Math.PI*2); x.fill();}
+    if(!reduz) requestAnimationFrame(desenha);
+  }
+  window.addEventListener('resize',function(){tam(); if(reduz) desenha(0);});
+  tam(); requestAnimationFrame(desenha);
+})();
+</script>
+</body>
+</html>
