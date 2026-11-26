@@ -2,7 +2,7 @@
 // Link do paciente: o profissional libera documentos/curvas/evolução, o paciente abre por um link
 // protegido (data de nascimento + 4 primeiros dígitos do CPF). Validade 30 dias, revogável.
 // Ações: criar, listar, revogar, reenviar, url (equipe, com login) e abrir (paciente, sem login).
-// Secrets: RESEND_API_KEY (já existe). Opcionais: LINK_FROM, LINK_BASE, AGENDA_ADMIN_EMAILS.
+// Secrets: RESEND_API_KEY (já existe). Opcionais: LINK_FROM, LINK_BASE, AGENDA_ADMIN_EMAILS, GOOGLE_REVIEW_URL, AVALIACAO_MIMO, EMAIL_LOGO_URL.
 // "Verify JWT with legacy secret" precisa ficar DESLIGADO: o paciente abre sem login; a equipe é conferida aqui.
 
 export const DIAS = 30, MAX_TENT = 5, BLOQ_MIN = 30;
@@ -41,18 +41,43 @@ export function statusDe(r: Row, agora = Date.now()): string {
   if (new Date(r.expires_at).getTime() < agora) return "vencido";
   return "ativo";
 }
-export function mailLink(clinic: string, pname: string, prof: string, url: string, ate: string, itens: string) {
+// Bloco opcional de avaliação no Google (aparece só no 1º envio do link, se GOOGLE_REVIEW_URL estiver configurado).
+// Todas as estrelas levam ao Google, qualquer nota: o Google proíbe filtrar quem avalia ou dar algo em troca da avaliação.
+// O "mimo" (AVALIACAO_MIMO) é um presente para TODOS os pacientes, sem depender de avaliar.
+export interface Extra { review?: string; mimo?: string; logo?: string; }
+function blocoAvaliacao(clinic: string, x: Extra) {
+  const rv = String(x.review || "").trim();
+  if (!/^https:\/\//i.test(rv)) return { html: "", text: "" };
+  const mimo = String(x.mimo || "").replace(/[<>\r\n]/g, "").trim().slice(0, 200);
+  const est = [1, 2, 3, 4, 5].map((n) => `<td style="padding:0 3px"><a href="${esc(rv)}" title="${n} estrela${n > 1 ? "s" : ""}" style="text-decoration:none;font-size:34px;line-height:38px;color:#f5b301">&#9733;</a></td>`).join("");
+  const html = `<div style="margin:24px 0 0;padding:18px 16px;border:1px solid #e3ecee;border-radius:14px;background:#f7fbfb;text-align:center">
+<div style="font-size:16px;font-weight:700;color:#004346;margin-bottom:4px">Como foi sua experiência?</div>
+<div style="font-size:13px;color:#4b6468;margin-bottom:10px">Toque nas estrelas e conte no Google. Leva menos de 1 minuto e ajuda outras famílias a conhecerem a ${esc(clinic)}.</div>
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:0 auto 12px"><tr>${est}</tr></table>
+<a href="${esc(rv)}" style="background:#ffffff;color:#2f7f8f;border:1px solid #2f7f8f;text-decoration:none;padding:9px 16px;border-radius:10px;font-weight:700;font-size:14px;display:inline-block">Avaliar no Google</a>
+${mimo ? `<div style="margin:16px 0 0;padding:12px;border-radius:10px;background:#fff7e0;color:#6b4e00;font-size:13px"><b>&#127873; Um presente para você:</b> ${esc(mimo)}</div>` : ""}
+<div style="margin-top:10px;font-size:12px;color:#8aa0a4">Sua opinião sincera, seja qual for, é muito bem-vinda.</div></div>`;
+  const text = `\n\nComo foi sua experiência? Conte no Google (menos de 1 minuto): ${rv}${mimo ? "\n\nUm presente para você: " + mimo : ""}`;
+  return { html, text };
+}
+export function mailLink(clinic: string, pname: string, prof: string, url: string, ate: string, itens: string, extra: Extra = {}) {
   const subject = "Seus documentos da consulta";
-  const text = `Olá! Os documentos de ${pname}${prof ? " (" + prof + ")" : ""} já estão disponíveis (${itens}).\n\nAbrir: ${url}\n\nPara sua segurança, você vai confirmar a data de nascimento e os 4 primeiros dígitos do CPF. O link vale até ${ate}.\n\n${clinic}`;
-  const html = `<div style="font-family:Arial,Helvetica,sans-serif;max-width:520px;margin:0 auto;padding:20px;color:#1b2b2d"><div style="font-size:18px;font-weight:700;color:#004346;margin-bottom:14px">${esc(clinic)}</div>
+  const av = blocoAvaliacao(clinic, extra);
+  const text = `Olá! Os documentos de ${pname}${prof ? " (" + prof + ")" : ""} já estão disponíveis (${itens}).\n\nAbrir: ${url}\n\nPara sua segurança, você vai confirmar a data de nascimento e os 4 primeiros dígitos do CPF. O link vale até ${ate}.${av.text}\n\n${clinic}`;
+  const logo = String(extra.logo || "").trim();
+  const topo = /^https:\/\//i.test(logo)
+    ? `<img src="${esc(logo)}" alt="${esc(clinic)}" width="180" style="display:block;margin:0 auto;width:180px;max-width:70%;height:auto;border:0">`
+    : `<div style="font-size:20px;font-weight:700;color:#ffffff;text-align:center">${esc(clinic)}</div>`;
+  const html = `<div style="font-family:Arial,Helvetica,sans-serif;max-width:520px;margin:0 auto;color:#1b2b2d;border:1px solid #e3ecee;border-radius:14px;overflow:hidden">
+<div style="background:#004346;padding:18px 20px">${topo}</div><div style="padding:20px">
 <p style="margin:0 0 10px">Olá! Os documentos de <b>${esc(pname)}</b>${prof ? " com " + esc(prof) : ""} já estão disponíveis.</p><p style="margin:0 0 16px;color:#4b6468">${esc(itens)}</p>
 <p style="margin:0 0 18px"><a href="${esc(url)}" style="background:#2f7f8f;color:#fff;text-decoration:none;padding:12px 18px;border-radius:10px;font-weight:700;display:inline-block">Abrir meus documentos</a></p>
-<p style="margin:0;color:#5b7377;font-size:13px">Para sua segurança, você vai confirmar a data de nascimento e os 4 primeiros dígitos do CPF. O link vale até ${esc(ate)}.</p>
-<p style="margin:18px 0 0;color:#8aa0a4;font-size:12px">Se você não esperava este e-mail, ignore-o.</p></div>`;
+<p style="margin:0;color:#5b7377;font-size:13px">Para sua segurança, você vai confirmar a data de nascimento e os 4 primeiros dígitos do CPF. O link vale até ${esc(ate)}.</p>${av.html}
+<p style="margin:18px 0 0;color:#8aa0a4;font-size:12px">Se você não esperava este e-mail, ignore-o.</p></div></div>`;
   return { subject, html, text };
 }
 
-export async function handle(body: any, db: Db, mailer: Mailer, staff: Staff | null, cfg: { base: string; from: string }, agora = Date.now()) {
+export async function handle(body: any, db: Db, mailer: Mailer, staff: Staff | null, cfg: { base: string; from: string; review?: string; mimo?: string; logo?: string }, agora = Date.now()) {
   const acao = String(body?.acao || "");
   // ---------- paciente (sem login) ----------
   if (acao === "abrir") {
@@ -95,7 +120,7 @@ export async function handle(body: any, db: Db, mailer: Mailer, staff: Staff | n
     if (statusDe(r, agora) !== "ativo") return { st: 409, j: { erro: "Este link não está mais ativo." } };
     const to = String(body.email || r.email || "").trim(); if (!emailOk(to)) return { st: 400, j: { erro: "E-mail inválido." } };
     const clinic = cleanName(body.clinic || r.clinic) || "Adintus Saúde";
-    const m = mailLink(clinic, r.pname, "", cfg.base + r.token, brDate(r.expires_at), r.itens || "Documentos");
+    const m = mailLink(clinic, r.pname, "", cfg.base + r.token, brDate(r.expires_at), r.itens || "Documentos", { logo: cfg.logo });
     const e = await mailer.send(to, m.subject, m.html, m.text, `${clinic} via Adintus <${cfg.from}>`);
     if (e.ok) await db.update(r.id, { sent_at: new Date(agora).toISOString(), email: to });
     return { st: 200, j: { enviado: e.ok, erroEmail: e.erro } };
@@ -127,7 +152,7 @@ export async function handle(body: any, db: Db, mailer: Mailer, staff: Staff | n
         if (!emailOk(body.email)) erroX = "O paciente não tem e-mail válido na ficha.";
         else {
           const clinicX = cleanName(body.clinic) || ex.clinic || "Adintus Saúde";
-          const m = mailLink(clinicX, cleanName(body.pname) || ex.pname, cleanName(body.prof), cfg.base + ex.token, brDate(expx), itensx);
+          const m = mailLink(clinicX, cleanName(body.pname) || ex.pname, cleanName(body.prof), cfg.base + ex.token, brDate(expx), itensx, { logo: cfg.logo });
           const e = await mailer.send(String(body.email).trim(), m.subject, m.html, m.text, `${clinicX} via Adintus <${cfg.from}>`);
           enviadoX = e.ok; erroX = e.erro;
           if (e.ok) await db.update(ex.id, { sent_at: new Date(agora).toISOString() });
@@ -145,7 +170,7 @@ export async function handle(body: any, db: Db, mailer: Mailer, staff: Staff | n
     if (body.enviar === true) {
       if (!emailOk(body.email)) erroEmail = "O paciente não tem e-mail válido na ficha.";
       else {
-        const m = mailLink(clinic, pname, prof, cfg.base + token, brDate(exp), itens);
+        const m = mailLink(clinic, pname, prof, cfg.base + token, brDate(exp), itens, { review: cfg.review, mimo: cfg.mimo, logo: cfg.logo });
         const e = await mailer.send(String(body.email).trim(), m.subject, m.html, m.text, `${clinic} via Adintus <${cfg.from}>`);
         enviado = e.ok; erroEmail = e.erro;
         if (e.ok) await db.update(row.id, { sent_at: new Date(agora).toISOString() });
@@ -186,7 +211,7 @@ if (typeof Deno !== "undefined" && Deno.serve) {
     },
   };
   // @ts-ignore
-  const cfg = { base: Deno.env.get("LINK_BASE") || "https://prontuario.adintus.com.br/p.html#", from: (Deno.env.get("LINK_FROM") || "agenda@adintus.com.br") };
+  const cfg = { base: Deno.env.get("LINK_BASE") || "https://prontuario.adintus.com.br/p.html#", from: (Deno.env.get("LINK_FROM") || "agenda@adintus.com.br"), review: Deno.env.get("GOOGLE_REVIEW_URL") || "", mimo: Deno.env.get("AVALIACAO_MIMO") || "", logo: Deno.env.get("EMAIL_LOGO_URL") ?? "https://prontuario.adintus.com.br/logo-email.png" };
   // @ts-ignore
   Deno.serve(async (req: Request) => {
     if (req.method === "OPTIONS") return new Response(null, { headers: CORS });
